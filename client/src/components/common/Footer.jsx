@@ -39,7 +39,7 @@ const Footer = () => {
                     </Box>
                 </Stack>
                 <div style={{ textAlign: 'center', marginBottom: '1rem', marginTop: '1rem' }}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Welcome to WebFlix, your go-to destination for movie trailers! Dive into a world of cinematic excitement as you explore the latest trailers for upcoming films and TV shows. Powered by the comprehensive API of The Movie Database (TMDb).
                 </div>
                 <Box
                     sx={{
