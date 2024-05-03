@@ -77,7 +77,7 @@ const HeroSlide = ({ mediaType, mediaCategory }) => {
         style={{ width: "100%", height: "max-content" }}
       autoplay={{
         delay: 2000,
-        disableOnInteraction: false
+        disableOnInteraction: true
       }}
       >
         {movies.map((movie, index) => (
