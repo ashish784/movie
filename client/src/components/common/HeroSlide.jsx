@@ -3,7 +3,7 @@ import { Box, Button, Chip, Divider, Stack, Typography, useTheme } from "@mui/ma
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { Autoplay } from 'swiper/core';
+import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { toast } from "react-toastify";
 
@@ -17,7 +17,6 @@ import CircularRate from "./CircularRate";
 import tmdbConfigs from "../../api/configs/tmdb.configs";
 import genreApi from "../../api/modules/genre.api";
 import mediaApi from "../../api/modules/media.api";
-
 
 const HeroSlide = ({ mediaType, mediaCategory }) => {
   const theme = useTheme();
@@ -74,12 +73,13 @@ const HeroSlide = ({ mediaType, mediaCategory }) => {
     }}>
       <Swiper
         grabCursor={true}
-        loop={movies.length > 1}
+        loop={true}
+        // modules={[Autoplay]}
         style={{ width: "100%", height: "max-content" }}
-      autoplay={{
-        delay: 1000,
-        disableOnInteraction: false
-      }}
+      // autoplay={{
+      //   delay: 3000,
+      //   disableOnInteraction: false
+      // }}
       >
         {movies.map((movie, index) => (
           <SwiperSlide key={index}>
