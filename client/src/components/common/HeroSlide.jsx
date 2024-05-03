@@ -18,7 +18,6 @@ import tmdbConfigs from "../../api/configs/tmdb.configs";
 import genreApi from "../../api/modules/genre.api";
 import mediaApi from "../../api/modules/media.api";
 
-import 'swiper/swiper-bundle.min.css';
 
 const HeroSlide = ({ mediaType, mediaCategory }) => {
   const theme = useTheme();
@@ -78,7 +77,7 @@ const HeroSlide = ({ mediaType, mediaCategory }) => {
         loop={movies.length > 1}
         style={{ width: "100%", height: "max-content" }}
       autoplay={{
-        delay: 0,
+        delay: 1000,
         disableOnInteraction: false
       }}
       >
