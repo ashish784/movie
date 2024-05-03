@@ -3,7 +3,6 @@ import { Box, Button, Chip, Divider, Stack, Typography, useTheme } from "@mui/ma
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { Autoplay } from 'swiper/core';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { toast } from "react-toastify";
 
@@ -17,6 +16,12 @@ import CircularRate from "./CircularRate";
 import tmdbConfigs from "../../api/configs/tmdb.configs";
 import genreApi from "../../api/modules/genre.api";
 import mediaApi from "../../api/modules/media.api";
+import SwiperCore, { Autoplay } from "swiper";
+
+// Import Swiper CSS
+import 'swiper/swiper-bundle.min.css';
+
+SwiperCore.use([Autoplay]);
 
 const HeroSlide = ({ mediaType, mediaCategory }) => {
   const theme = useTheme();
@@ -75,10 +80,10 @@ const HeroSlide = ({ mediaType, mediaCategory }) => {
         grabCursor={true}
         loop={movies.length > 1}
         style={{ width: "100%", height: "max-content" }}
-      autoplay={{
-        delay: 2000,
-        disableOnInteraction: false
-      }}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false
+        }}
       >
         {movies.map((movie, index) => (
           <SwiperSlide key={index}>
@@ -162,21 +167,4 @@ const HeroSlide = ({ mediaType, mediaCategory }) => {
                     variant="contained"
                     size="large"
                     startIcon={<PlayArrowIcon />}
-                    component={Link}
-                    to={routesGen.mediaDetail(mediaType, movie.id)}
-                    sx={{ width: "max-content" }}
-                  >
-                    watch now
-                  </Button>
-                  {/* buttons */}
-                </Stack>
-              </Box>
-            </Box>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </Box>
-  );
-};
-
-export default HeroSlide;
+                   
